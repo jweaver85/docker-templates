@@ -1,5 +1,5 @@
 # core
-spring boot core application for JWeaver's Portfolio
+docker spring boot application for JWeaver's Portfolio
 
 
 docker
