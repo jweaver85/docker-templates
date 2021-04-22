@@ -2,4 +2,4 @@ rm -rf target
 
 mvn clean install
 
-docker build -t core .
+docker build -t java-spring-boot-maven .
