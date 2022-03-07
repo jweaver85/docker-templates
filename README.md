@@ -20,4 +20,21 @@ in the same container, although it's not preferred there are tricks to help you 
 ``supervisord``:
 - https://docs.docker.com/config/containers/multi-service_container/
 
+Running
+---
+Docker:
+* each template folder should have an example folder, change to this directory and take a look at the Readme in that directory 
 
+Docker-compose:
+* from the repository root, run: 
+    * `docker compose build`
+    * `docker compose up`
+
+Kubernetes:
+* this method requires two cli tools:
+  * `kubectl`
+  * `kompose`
+* from the root of the repository run:
+  * `kompose convert -o kubernetes`
+  * `kubectl apply -f $(ls -p kubernetes/*.yaml | xargs | tr ' ' ',')`
+  * `kubectl delete -f $(ls -p kubernetes/*.yaml | xargs | tr ' ' ',')`

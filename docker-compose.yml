@@ -1,0 +1,69 @@
+version: '3.8'
+
+services:
+  mysqlsvc:
+    image: mysqlsvc:v0
+    restart: always
+    build:
+      context: mysql-hydrated-db/
+    environment:
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - "3306:3306"
+
+  gosvc:
+    image: gosvc:v0
+    restart: always
+    build:
+      context: golang-webserver/example/
+    ports:
+      - "8000:10000"
+
+  nodesvc:
+    image: nodesvc:v0
+    restart: always
+    build:
+      context: node-express-webserver/example
+    ports:
+      - "8001:8081"
+
+  ionicsvc:
+    image: ionicsvc:v0
+    restart: always
+    build:
+      context: ionic-angular-spa/example
+    ports:
+      - "8080:80"
+    labels:
+      kompose.service.type: LoadBalancer
+
+  javasvc:
+    image: javasvc:v0
+    restart: always
+    build:
+      context: java-spring-boot-maven/example
+    ports:
+      - "8002:8080"
+
+#  python-django:
+#    restart: always
+#    build:
+#      context: python-django-webserver/example
+#    ports:
+#      -
+
+  pythonflasksvc:
+    image: pythonflasksvc:v0
+    restart: always
+    build:
+      context: python-flask-webserver/example
+    ports:
+      - "8003:5000"
+
+  pythonhttpsvc:
+    image: pythonhttpsvc:v0
+    restart: always
+    build:
+      context: python-http-webserver/example
+    ports:
+      - "8004:8000"
