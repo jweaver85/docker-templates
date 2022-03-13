@@ -1,0 +1,48 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-test
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
+  rules:
+    - host: localhost
+      http:
+        paths:
+          - path: /javasvc(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: javasvc
+                port:
+                  number: 8002
+          - path: /gosvc(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: gosvc
+                port:
+                  number: 8000
+          - path: /nodesvc(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: nodesvc
+                port:
+                  number: 8001
+          - path: /pythonflasksvc(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: pythonflasksvc
+                port:
+                  number: 8003
+          - path: /pythonhttpsvc(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: pythonhttpsvc
+                port:
+                  number: 8004

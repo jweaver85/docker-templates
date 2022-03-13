@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -o kubernetes
+    kompose.version: 1.26.1 (HEAD)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: gosvc
+  name: gosvc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: gosvc
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert -o kubernetes
+        kompose.version: 1.26.1 (HEAD)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: gosvc
+    spec:
+      containers:
+        - image: gosvc:v0
+          name: gosvc
+          ports:
+            - containerPort: 10000
+          resources: {}
+      restartPolicy: Always
+status: {}

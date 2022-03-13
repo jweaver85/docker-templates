@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -o kubernetes
+    kompose.version: 1.26.1 (HEAD)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: pythonhttpsvc
+  name: pythonhttpsvc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: pythonhttpsvc
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert -o kubernetes
+        kompose.version: 1.26.1 (HEAD)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: pythonhttpsvc
+    spec:
+      containers:
+        - image: pythonhttpsvc:v0
+          name: pythonhttpsvc
+          ports:
+            - containerPort: 8000
+          resources: {}
+      restartPolicy: Always
+status: {}

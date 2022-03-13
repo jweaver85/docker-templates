@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -o kubernetes
+    kompose.version: 1.26.1 (HEAD)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: pythondjangosvc
+  name: pythondjangosvc
+spec:
+  ports:
+    - name: "8004"
+      port: 8004
+      targetPort: 8000
+  selector:
+    io.kompose.service: pythondjangosvc
+status:
+  loadBalancer: {}

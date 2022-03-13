@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -o kubernetes
+    kompose.version: 1.26.1 (HEAD)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: gosvc
+  name: gosvc
+spec:
+  ports:
+    - name: "8000"
+      port: 8000
+      targetPort: 10000
+  selector:
+    io.kompose.service: gosvc
+status:
+  loadBalancer: {}
