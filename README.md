@@ -34,7 +34,13 @@ Kubernetes:
 * this method requires two cli tools:
   * `kubectl`
   * `kompose`
+* https://kubernetes.github.io/ingress-nginx/deploy/#quick-start
 * from the root of the repository run:
-  * `kompose convert -o kubernetes`
-  * `kubectl apply -f $(ls -p kubernetes/*.yaml | xargs | tr ' ' ',')`
-  * `kubectl delete -f $(ls -p kubernetes/*.yaml | xargs | tr ' ' ',')`
+  * ```
+    kompose convert -o kubernetes
+  * ```
+    kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.1.1/deploy/static/provider/cloud/deploy.yaml
+  * ```
+    kubectl apply -f $(ls -p kubernetes/*.yaml | xargs | tr ' ' ',')
+  * ```
+    kubectl delete -f $(ls -p kubernetes/*.yaml | xargs | tr ' ' ',')

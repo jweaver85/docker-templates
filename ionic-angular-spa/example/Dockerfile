@@ -2,7 +2,7 @@ FROM node:15-alpine AS builder
 
 WORKDIR /app
 RUN npm install -g @ionic/cli@6.14.1
-RUN npm install -g @angular/cli
+RUN npm install -g @angular/cli@~11.2.4
 
 COPY package.json .
 RUN npm install --include=dev

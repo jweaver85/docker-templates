@@ -2,4 +2,3 @@
 vcs.xml
 venv/
 *.iml
-kubernetes/*.yaml

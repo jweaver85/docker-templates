@@ -4,13 +4,13 @@ const express = require('express');
 const _ = require('lodash');
 
 // Constants
-const PORT = 8080;
+const PORT = 8001;
 const HOST = '0.0.0.0';
 
 // App
 const app = express();
 app.get('/hello-world', (req, res) => {
-    res.send('Hello World!');
+    res.send('Hello World! (nodesvc)');
 });
 
 app.get('/sort-numbers', (req, res) => {

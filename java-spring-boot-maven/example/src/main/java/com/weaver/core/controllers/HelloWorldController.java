@@ -12,6 +12,6 @@ public class HelloWorldController {
     @GetMapping
     @ResponseBody
     public String getMessage() {
-        return "Hello World";
+        return "Hello World (javasvc)";
     }
 }

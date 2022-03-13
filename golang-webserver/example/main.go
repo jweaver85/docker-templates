@@ -12,7 +12,7 @@ func basePage(w http.ResponseWriter, r *http.Request) {
 }
 
 func helloWorld(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello World!")
+	fmt.Fprintf(w, "Hello World! (gosvc)")
 	fmt.Println("Endpoint Hit: helloWorld")
 }
 
