@@ -73,4 +73,4 @@ services:
     build:
       context: python-http-webserver/example
     ports:
-      - "8004:8000"
+      - "8004:8004"

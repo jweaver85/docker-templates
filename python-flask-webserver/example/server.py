@@ -12,7 +12,7 @@ def home():
 
 @app.route('/hello-world', methods=['GET'])
 def hello_world():
-    return "Hello World!"
+    return "Hello World! (pythonflasksvc)"
 
 
 @app.route('/hello', methods=['GET'])

@@ -2,11 +2,17 @@ import socketserver
 import http.server
 import re
 
-PORT = 8000
+PORT = 8004
 
 
 class CustomHandler(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):
+        if None is not re.search('/hello-world', self.path):
+            self.send_response(200)
+            self.send_header('Content-type', 'text/html')
+            self.end_headers()
+            self.wfile.write(str('Hello World! (pythonhttpsvc)').encode())  # call sample function here
+            return
         if None is not re.search('/api/square/*', self.path):
             num = float(self.path.split('/')[-1])
             print(self.path.split('/'))
