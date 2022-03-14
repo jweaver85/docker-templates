@@ -13,9 +13,9 @@ echo
 echo "** pythonflasksvc"
 curl localhost/pythonflasksvc/hello-world/
 echo
-echo "** pythonhttpsvc"
-curl localhost/pythonhttpsvc/hello-world/
-echo
+echo -e "** pythonhttpsvc\n $(curl -sb -H "Accept: application/json" "localhost/pythonhttpsvc/hello-world")"
+#curl localhost/pythonhttpsvc/hello-world/
+#echo
 echo "** pythondjangosvc"
 curl localhost/pythondjangosvc/hello-world/
 echo
