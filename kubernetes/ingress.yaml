@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ingress-test
+  name: api-gateway
   annotations:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/rewrite-target: /$2
@@ -46,3 +46,11 @@ spec:
                 name: pythonhttpsvc
                 port:
                   number: 8004
+#          - path: /
+#            #TODO: make this serve client files
+#            pathType: Prefix
+#            backend:
+#              service:
+#                name: ionicsvc
+#                port:
+#                  number: 8080

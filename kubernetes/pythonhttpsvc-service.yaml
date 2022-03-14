@@ -12,7 +12,7 @@ spec:
   ports:
     - name: "8004"
       port: 8004
-      targetPort: 8000
+      targetPort: 8004
   selector:
     io.kompose.service: pythonhttpsvc
 status:

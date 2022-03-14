@@ -27,7 +27,7 @@ spec:
         - image: pythonhttpsvc:v0
           name: pythonhttpsvc
           ports:
-            - containerPort: 8000
+            - containerPort: 8004
           resources: {}
       restartPolicy: Always
 status: {}

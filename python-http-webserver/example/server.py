@@ -37,7 +37,7 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
             http.server.SimpleHTTPRequestHandler.do_GET(self)
 
 
-httpd = socketserver.ThreadingTCPServer(('', PORT),CustomHandler)
+httpd = socketserver.ThreadingTCPServer(('', PORT), CustomHandler)
 
 print("serving at port", PORT)
 httpd.serve_forever()
