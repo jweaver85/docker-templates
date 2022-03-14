@@ -51,13 +51,13 @@ services:
     ports:
       - "8002:8080"
 
-#  pythondjangosvc:
-#    image: pythondjangosvc:v0
-#    restart: always
-#    build:
-#      context: python-django-webserver/example
-#    ports:
-#      - "8004:8000"
+  pythondjangosvc:
+    image: pythondjangosvc:v0
+    restart: always
+    build:
+      context: python-django-webserver/example
+    ports:
+      - "8005:8005"
 
   pythonflasksvc:
     image: pythonflasksvc:v0

@@ -46,6 +46,13 @@ spec:
                 name: pythonhttpsvc
                 port:
                   number: 8004
+          - path: /pythondjangosvc(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: pythondjangosvc
+                port:
+                  number: 8005
 #          - path: /
 #            #TODO: make this serve client files
 #            pathType: Prefix

@@ -10,12 +10,12 @@ def home():
     return "<h1>Python-Flask API</h1><p>This site is a simple prototype API for demonstration purposes.</p>"
 
 
-@app.route('/hello-world', methods=['GET'])
+@app.route('/hello-world/', methods=['GET'])
 def hello_world():
     return "Hello World! (pythonflasksvc)"
 
 
-@app.route('/hello', methods=['GET'])
+@app.route('/hello/', methods=['GET'])
 def hello():
     if "name" in request.args:
         return "Hello " + request.args["name"] + "!"

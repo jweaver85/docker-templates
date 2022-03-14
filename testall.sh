@@ -1,13 +1,21 @@
 #!/bin/bash
 
+echo "**** Testing ingress service endpoints (hello-world/) ****"
+echo "** gosvc"
+curl localhost/gosvc/hello-world/
 echo
-curl localhost/gosvc/hello-world
+echo "** nodesvc"
+curl localhost/nodesvc/hello-world/
 echo
-curl localhost/nodesvc/hello-world
+echo "** javasvc"
+curl localhost/javasvc/hello-world/
 echo
-curl localhost/javasvc/hello-world
+echo "** pythonflasksvc"
+curl localhost/pythonflasksvc/hello-world/
 echo
-curl localhost/pythonflasksvc/hello-world
+echo "** pythonhttpsvc"
+curl localhost/pythonhttpsvc/hello-world/
 echo
-curl localhost/pythonhttpsvc/hello-world
+echo "** pythondjangosvc"
+curl localhost/pythondjangosvc/hello-world/
 echo

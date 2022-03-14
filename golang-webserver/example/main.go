@@ -18,7 +18,7 @@ func helloWorld(w http.ResponseWriter, r *http.Request) {
 
 func handleRequests() {
 	http.HandleFunc("/", basePage)
-	http.HandleFunc("/hello-world", helloWorld)
+	http.HandleFunc("/hello-world/", helloWorld)
 	log.Fatal(http.ListenAndServe(":10000", nil))
 }
 
