@@ -53,6 +53,13 @@ spec:
                 name: pythondjangosvc
                 port:
                   number: 8005
+          - path: /dotnetwebsvc(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: dotnetwebsvc
+                port:
+                  number: 8006
 #          - path: /
 #            #TODO: make this serve client files
 #            pathType: Prefix

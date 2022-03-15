@@ -74,3 +74,11 @@ services:
       context: python-http-webserver/example
     ports:
       - "8004:8004"
+
+  dotnetwebsvc:
+    image: dotnetwebsvc:v0
+    restart: always
+    build:
+      context: dot-net-web/example
+    ports:
+      - "8006:80"

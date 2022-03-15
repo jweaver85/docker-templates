@@ -19,3 +19,6 @@ echo -e "** pythonhttpsvc\n $(curl -sb -H "Accept: application/json" "localhost/
 echo "** pythondjangosvc"
 curl localhost/pythondjangosvc/hello-world/
 echo
+echo "** dotnetwebsvc"
+curl localhost/dotnetwebsvc/hello-world/
+echo
