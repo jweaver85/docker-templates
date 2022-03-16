@@ -7,4 +7,4 @@ RUN dotnet publish -c Release --use-current-runtime --self-contained true -o /ap
 FROM mcr.microsoft.com/dotnet/runtime:6.0-alpine
 WORKDIR app/
 COPY --from=builder /app/built/ .
-CMD dotnet dot-net-web.dll
+CMD dotnet dot-net-mvc.dll --urls="http://*:8007"

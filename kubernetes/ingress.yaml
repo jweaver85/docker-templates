@@ -60,6 +60,13 @@ spec:
                 name: dotnetwebsvc
                 port:
                   number: 8006
+          - path: /dotnetmvcsvc(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: dotnetmvcsvc
+                port:
+                  number: 8007
 #          - path: /
 #            #TODO: make this serve client files
 #            pathType: Prefix

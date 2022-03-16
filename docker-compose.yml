@@ -82,3 +82,11 @@ services:
       context: dot-net-web/example
     ports:
       - "8006:80"
+
+  dotnetmvcsvc:
+    image: dotnetmvcsvc:v0
+    restart: always
+    build:
+      context: dot-net-mvc/example
+    ports:
+      - "8007:8007"

@@ -22,3 +22,6 @@ echo
 echo "** dotnetwebsvc"
 curl localhost/dotnetwebsvc/hello-world/
 echo
+echo "** dotnetmvcsvc"
+curl localhost/dotnetmvcsvc/hello-world/
+echo
