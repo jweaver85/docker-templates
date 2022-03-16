@@ -25,3 +25,6 @@ echo
 echo "** dotnetmvcsvc"
 curl localhost/dotnetmvcsvc/hello-world/
 echo
+echo "** phpwebsvc"
+curl localhost/phpwebsvc/hello-world/
+echo

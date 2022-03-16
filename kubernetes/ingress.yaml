@@ -67,6 +67,13 @@ spec:
                 name: dotnetmvcsvc
                 port:
                   number: 8007
+          - path: /phpwebsvc(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: phpwebsvc
+                port:
+                  number: 8008
 #          - path: /
 #            #TODO: make this serve client files
 #            pathType: Prefix

@@ -90,3 +90,11 @@ services:
       context: dot-net-mvc/example
     ports:
       - "8007:8007"
+
+  phpwebsvc:
+    image: phpwebsvc:v0
+    restart: always
+    build:
+      context: php-webserver/example
+    ports:
+      - "8008:8008"

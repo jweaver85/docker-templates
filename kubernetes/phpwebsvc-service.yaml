@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -o kubernetes
+    kompose.version: 1.26.1 (HEAD)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: phpwebsvc
+  name: phpwebsvc
+spec:
+  ports:
+    - name: "8008"
+      port: 8008
+      targetPort: 8008
+  selector:
+    io.kompose.service: phpwebsvc
+status:
+  loadBalancer: {}
