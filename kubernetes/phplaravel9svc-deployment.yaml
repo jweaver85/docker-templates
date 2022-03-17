@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -o kubernetes
+    kompose.version: 1.26.1 (HEAD)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: phplaravel9svc
+  name: phplaravel9svc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: phplaravel9svc
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert -o kubernetes
+        kompose.version: 1.26.1 (HEAD)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: phplaravel9svc
+    spec:
+      containers:
+        - image: phplaravel9svc:v0
+          name: phplaravel9svc
+          ports:
+            - containerPort: 8009
+          resources: {}
+      restartPolicy: Always
+status: {}

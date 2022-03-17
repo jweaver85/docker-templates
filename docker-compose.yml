@@ -98,3 +98,11 @@ services:
       context: php-webserver/example
     ports:
       - "8008:8008"
+
+  phplaravel9svc:
+    image: phplaravel9svc:v0
+    restart: always
+    build:
+      context: php-laravel9/
+    ports:
+      - "8009:8009"

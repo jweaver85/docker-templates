@@ -28,3 +28,6 @@ echo
 echo "** phpwebsvc"
 curl localhost/phpwebsvc/hello-world/
 echo
+echo "** phplaravel9svc"
+curl localhost/phplaravel9svc/hello-world/
+echo
