@@ -81,6 +81,13 @@ spec:
                 name: phplaravel9svc
                 port:
                   number: 8009
+          - path: /phpsymfonysvc(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: phpsymfonysvc
+                port:
+                  number: 8010
 #          - path: /
 #            #TODO: make this serve client files
 #            pathType: Prefix

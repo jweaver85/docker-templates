@@ -106,3 +106,11 @@ services:
       context: php-laravel9/
     ports:
       - "8009:8009"
+
+  phpsymfonysvc:
+    image: phpsymfonysvc:v0
+    restart: always
+    build:
+      context: php-symfony/
+    ports:
+      - "8010:8010"

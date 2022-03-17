@@ -31,3 +31,6 @@ echo
 echo "** phplaravel9svc"
 curl localhost/phplaravel9svc/hello-world/
 echo
+echo "** phpsymfonysvc"
+curl localhost/phpsymfonysvc/hello-world/
+echo

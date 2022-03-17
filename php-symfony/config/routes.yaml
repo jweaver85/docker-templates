@@ -1,0 +1,16 @@
+controllers:
+    resource: ../src/Controller/
+    type: annotation
+
+kernel:
+    resource: ../src/Kernel.php
+    type: annotation
+
+hello_world:
+    path: /hello-world/
+    # the controller value has the format 'controller_class::method_name'
+    controller: App\Controller\HelloWorldController::get
+
+    # if the action is implemented as the __invoke() method of the
+    # controller class, you can skip the '::method_name' part:
+    # controller: App\Controller\HelloWorldController
