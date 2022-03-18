@@ -31,6 +31,7 @@ URLs the ingress controller is proxying to it. This is what is happening:
  
 I think the main trick here, is to comment out the only rule in the .htacess file that had a 301 redirect
   * shrugs....
+  * It was a little more involved. I left the file in php-laravel9/public/.htaccess intact, with only one rule uncommented
 
 Running
 ---
