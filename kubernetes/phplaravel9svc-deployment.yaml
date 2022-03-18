@@ -27,7 +27,7 @@ spec:
         - image: phplaravel9svc:v0
           name: phplaravel9svc
           ports:
-            - containerPort: 8009
+            - containerPort: 80
           resources: {}
       restartPolicy: Always
 status: {}

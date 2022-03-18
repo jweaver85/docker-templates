@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -o kubernetes
+    kompose.version: 1.26.1 (HEAD)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: meilisearch
+  name: meilisearch
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: meilisearch
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert -o kubernetes
+        kompose.version: 1.26.1 (HEAD)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: meilisearch
+    spec:
+      containers:
+        - image: getmeili/meilisearch:latest
+          livenessProbe:
+            exec:
+              command:
+                - wget
+                - --no-verbose
+                - --spider
+                - http://localhost:7700/health
+            failureThreshold: 3
+            timeoutSeconds: 5
+          name: meilisearch
+          ports:
+            - containerPort: 7700
+          resources: {}
+          volumeMounts:
+            - mountPath: /data.ms
+              name: meilisearch
+      restartPolicy: Always
+      volumes:
+        - name: meilisearch
+          persistentVolumeClaim:
+            claimName: meilisearch
+status: {}

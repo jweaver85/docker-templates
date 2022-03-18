@@ -6,14 +6,17 @@ metadata:
     kompose.version: 1.26.1 (HEAD)
   creationTimestamp: null
   labels:
-    io.kompose.service: phplaravel9svc
-  name: phplaravel9svc
+    io.kompose.service: mailhog
+  name: mailhog
 spec:
   ports:
-    - name: "8009"
-      port: 8009
-      targetPort: 80
+    - name: "1025"
+      port: 1025
+      targetPort: 1025
+    - name: "8025"
+      port: 8025
+      targetPort: 8025
   selector:
-    io.kompose.service: phplaravel9svc
+    io.kompose.service: mailhog
 status:
   loadBalancer: {}

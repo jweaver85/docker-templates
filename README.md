@@ -20,6 +20,18 @@ in the same container, although it's not preferred there are tricks to help you 
 ``supervisord``:
 - https://docs.docker.com/config/containers/multi-service_container/
 
+Trying to serve client asseste behind from behind a kubernetes ingress controller has been very trying.
+Why would you want to do that? Well, because I don't want to pay for cloud infra, and i can learn a lot locally anyway.
+So far the most progress i've been able to make is in the laravel project where i'm trying to tell apache2 to NOT rewrite
+URLs the ingress controller is proxying to it. This is what is happening:
+  * browser url: localhost/phplaravel9svc/hello-world/
+  * nginxingress directs traffic to phplaravel9svc:8009/hello-world/ (port-forwarded to :80)
+  * apache rewrites to localhost/hello-world/
+    * nginx doesnt know what to do with this resulting URL, so responds with a 404 
+ 
+I think the main trick here, is to comment out the only rule in the .htacess file that had a 301 redirect
+  * shrugs....
+
 Running
 ---
 Docker:

@@ -6,13 +6,13 @@ metadata:
     kompose.version: 1.26.1 (HEAD)
   creationTimestamp: null
   labels:
-    io.kompose.service: mysqlsvc
-  name: mysqlsvc
+    io.kompose.service: mailhog
+  name: mailhog
 spec:
   replicas: 1
   selector:
     matchLabels:
-      io.kompose.service: mysqlsvc
+      io.kompose.service: mailhog
   strategy: {}
   template:
     metadata:
@@ -21,16 +21,14 @@ spec:
         kompose.version: 1.26.1 (HEAD)
       creationTimestamp: null
       labels:
-        io.kompose.service: mysqlsvc
+        io.kompose.service: mailhog
     spec:
       containers:
-        - env:
-            - name: MYSQL_ROOT_PASSWORD
-              value: password
-          image: mysqlsvc:v0
-          name: mysqlsvc
+        - image: mailhog/mailhog:latest
+          name: mailhog
           ports:
-            - containerPort: 3306
+            - containerPort: 1025
+            - containerPort: 8025
           resources: {}
       restartPolicy: Always
 status: {}
