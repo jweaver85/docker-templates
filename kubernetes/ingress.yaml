@@ -8,6 +8,16 @@ metadata:
     nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
   rules:
+    - host: localstack
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: localstack
+                port:
+                  number: 8002
     - host: localhost
       http:
         paths:
@@ -88,6 +98,20 @@ spec:
                 name: phpsymfonysvc
                 port:
                   number: 8010
+          - path: /phpsymfonywebsvc(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: phpsymfonywebsvc
+                port:
+                  number: 8011
+          - path: /ionicsvc(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: ionicsvc
+                port:
+                  number: 8080
 #          - path: /
 #            #TODO: make this serve client files
 #            pathType: Prefix
